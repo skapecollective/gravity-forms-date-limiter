@@ -1,0 +1,77 @@
+.gfdl {
+
+  $grid-cols: 12;
+  $grid-gutter: 5px;
+
+  // Column row container.
+  //
+  //
+  &-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -$grid-gutter !important;
+    margin-right: -$grid-gutter !important;
+  }
+
+  &-row-gutter-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+
+    > * {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+
+  // Flexible column width.
+  //
+  //
+  &-col {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-basis: 0%;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+    box-sizing: border-box;
+  }
+
+  // Specific column width.
+  //
+  //
+  @for $i from 1 through $grid-cols {
+    &-col-#{$i} {
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: auto;
+      width: ( 100% / $grid-cols ) * $i;
+      padding-left: $grid-gutter;
+      padding-right: $grid-gutter;
+      box-sizing: border-box;
+    }
+  }
+
+  // All columns share the same width.
+  //
+  //
+  @for $i from 1 through $grid-cols {
+    &-row-cols-#{$i} {
+      > * {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: auto;
+        width: 100% / $i;
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+}
+
+.panel-block-tabs__body--settings input[type="date"] {
+  max-height: 2.25rem;
+  min-height: 2.25rem;
+  width: 100%;
+}

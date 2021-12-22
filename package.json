@@ -1,0 +1,26 @@
+{
+  "author": "Skape Collective",
+  "license": "Attribution-NonCommercial-NoDerivatives 4.0 International",
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.29",
+    "sass": "~1.38.2",
+    "sass-loader": "^12.1.0"
+  },
+  "browserslist": [
+    "last 3 version",
+    "> 1%",
+    "ie 11"
+  ]
+}
